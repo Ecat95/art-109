@@ -50,6 +50,30 @@ body {
     transform: rotate(30deg);
 }
 
+.circle {
+   /* background-color: rgb(14, 124, 36); */
+    width: 100px;
+    height: 100px;
+    /* border-radius: 100px;
+   */
+    margin: 75px auto;
+    animation: shape-1 2s infinite alternate ;
+
+}
+
+@keyframes shape-1 {
+    0% {
+        border-radius: 0px;
+        background-color: blueviolet;
+    }
+
+    100% {
+        border-radius: 100px;
+        background-color: chartreuse;
+    }
+
+}
+
 .button-div {
     text-align: center;
     margin: 75px auto;
@@ -81,7 +105,18 @@ body {
     0% {
         width: 100px;
     }
+
     100% {
         width: 100vw;
     }
+}
+.look{
+background-color: blue;
+}
+
+.look:hover {
+background-color: chartreuse;
+color: aliceblue;
+width: 500px;
+transform: rotate(0.5turn);
 }
