@@ -108,11 +108,11 @@ header {
 
 }
 #fire1 {
-  animation-duration: 3s;
-  animation-name:fadeinout;
+
+  animation:fadein 3s infinite alternate;
 
 }
-@keyframes fadeinout  {
+@keyframes fadein  {
   from {
     opacity: 0%;
     scale: 0%;
