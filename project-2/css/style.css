@@ -7,7 +7,7 @@ https://www.paulirish.com/2012/box-sizing-border-box-ftw/
 
 
 html {
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     font-size: 62.5%;
 }
 
@@ -20,28 +20,66 @@ html {
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+}
 
 html,
 body {
     height: 100%;
 }
+
 #main1 {
     padding: 10px;
-   color: darkolivegreen;
+    color: darkolivegreen;
     background-color: antiquewhite;
-     font-size: 1.2rem;
+    font-size: 1.2rem;
     /* font-size 1.6rem is now the same as 16px */
     line-height: 1.2;
-  font-family: crimson-text-bold;
-  font-family: "Crimson Text", serif;
-  font-weight: 700;
-  font-style: bold;
+    font-family: crimson-text-bold;
+    font-family: "Crimson Text", serif;
+    font-weight: 700;
+    font-style: bold;
 }
 
 #option1 {
- background-color: black;
+    box-sizing: border-box;
+    background-color: black;
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 4px;
+    }
+
+    /* Create four equal columns that sits next to each other */
+    .column {
+        flex: 25%;
+        max-width: 25%;
+        padding: 0 4px;
+    }
+
+    .column img {
+        margin-top: 8px;
+        vertical-align: middle;
+    }
+
+    @media (max-width: 800px) {
+        .column {
+            flex: 50%;
+            max-width: 50%;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .column {
+            flex: 100%;
+            max-width: 100%;
+        }
+    }
 
 }
+
 /* body {
    
    
@@ -49,7 +87,6 @@ body {
 
 header {
     padding: 50px;
-    background-color: cadetblue;
     text-align: center;
 }
 
@@ -59,21 +96,22 @@ main {}
     display: inline-block;
 
 }
-.hidden  {
+
+.hidden {
 
     visibility: hidden;
 }
 
-
+/* 
 #image-0 {
-    position: absolute;
-    top: 50px;
-    right: 50px;
+    position: left;
+    top: 1px;
+    right: 1px;
 }
 #image-1 {
-    position: absolute;
-    top: 50px;
-    right: 50px;
+    position: right;
+    top: 1px;
+    right: 1px;
 }
 #image-2 {
     position: absolute;
@@ -99,4 +137,4 @@ main {}
     position: absolute;
     top: 50px;
     right: 50px;
-}
+} */
