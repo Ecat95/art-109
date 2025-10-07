@@ -36,9 +36,7 @@ body {
     margin: auto;
 
 }
-.a {
-    text-decoration: none;
-}
+
 
 #main1 {
     padding: 40px;
@@ -50,10 +48,13 @@ body {
 
     font-weight: 700;
     text-decoration: none;
+    padding: 40;
 
 
 }
-
+.a {
+    text-decoration: none;
+}
 
 #option1 {
     box-sizing: border-box;
@@ -105,4 +106,20 @@ header {
 .image-div {
     display: inline-block;
 
+}
+#fire1 {
+  animation-duration: 3s;
+  animation-name:fadeinout;
+
+}
+@keyframes fadeinout  {
+  from {
+    opacity: 0%;
+    scale: 0%;
+  }
+
+  to {
+   opacity: 100%;
+   scale: 100%;
+  }
 }
