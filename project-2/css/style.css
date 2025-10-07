@@ -109,7 +109,7 @@ header {
 }
 #fire1 {
 
-  animation:fadein 3s infinite alternate;
+  animation:fadein 3s ;
 
 }
 @keyframes fadein  {
