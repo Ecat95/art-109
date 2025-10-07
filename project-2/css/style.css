@@ -40,7 +40,7 @@ body {
 
 #main1 {
     padding: 40px;
-   color: forestgreen;
+    color: forestgreen;
     background-color: antiquewhite;
     font-size: 1.5rem;
     /* font-size 1.6rem is now the same as 16px */
@@ -52,6 +52,7 @@ body {
 
 
 }
+
 .a {
     text-decoration: none;
 }
@@ -107,19 +108,21 @@ header {
     display: inline-block;
 
 }
-#fire1 {
 
-  animation:fadein 3s ;
+#fire1 {
+    background-color: chocolate;
+    animation: fadein 3s;
 
 }
-@keyframes fadein  {
-  from {
-    opacity: 0%;
-    scale: 0%;
-  }
 
-  to {
-   opacity: 100%;
-   scale: 100%;
-  }
+@keyframes fadein {
+    from {
+        opacity: 0%;
+        scale: 0%;
+    }
+
+    to {
+        opacity: 100%;
+        scale: 100%;
+    }
 }
