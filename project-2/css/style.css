@@ -11,7 +11,6 @@ html {
     font-size: 62.5%;
 }
 
-
 *,
 *:before,
 *:after {
@@ -19,6 +18,7 @@ html {
     margin: 0;
     padding: 0;
 }
+
 
 .a {
     text-decoration: none;
@@ -83,61 +83,28 @@ padding: 1px;
 
 }
 
-/* body {
-   
-   
-} */
+#fire1 {
 
+}
+#fire1 {
+  transition-property: opacity, display;
+  transition-duration: 0.25s;
+  transition-behavior: allow-discrete;
+}
+
+#fire1.fade-out {
+  opacity: 0;
+  display: none;
+}
 header {
     padding: 50px;
     text-align: center;
 }
 
-main {}
+
 
 .image-div {
     display: inline-block;
 
 }
 
-.hidden {
-
-    visibility: hidden;
-}
-
-/* 
-#image-0 {
-    position: left;
-    top: 1px;
-    right: 1px;
-}
-#image-1 {
-    position: right;
-    top: 1px;
-    right: 1px;
-}
-#image-2 {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-#image-3 {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-}
-#image-4 {
-    position: fixed;
-    top: 50px;
-    right: 50px;
-}
-#image-5 {
-    position: sticky;
-    top: 50px;
-    right: 50px;
-}
-#image-6 {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-} */
