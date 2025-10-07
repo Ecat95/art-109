@@ -20,31 +20,40 @@ html {
 }
 
 
-.a {
-    text-decoration: none;
-}
 
 html,
 body {
     height: 100%;
 }
-.index header {
-background-color: darkolivegreen;
-padding: 1px;
+
+.header {
+    background-color: darkolivegreen;
+    /* background: #222; */
+    color: #fcfdfd;
+    display: flex;
+    justify-content: space-between;
+    /* padding: 0 20px; */
+    margin: auto;
+
 }
+.a {
+    text-decoration: none;
+}
+
 #main1 {
     padding: 40px;
-    color: rgb(144, 188, 68);
+   color: forestgreen;
     background-color: antiquewhite;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     /* font-size 1.6rem is now the same as 16px */
     line-height: 1.2;
-    font-family: crimson-text-bold;
-    font-family: "Crimson Text", serif;
+
     font-weight: 700;
-    font-style: bold;
-    text-decoration: darkolivegreen;
+    text-decoration: none;
+
+
 }
+
 
 #option1 {
     box-sizing: border-box;
@@ -85,18 +94,9 @@ padding: 1px;
 }
 
 
-#fire1 {
-  transition-property: opacity, display;
-  transition-duration: 0.25s;
-  transition-behavior: allow-discrete;
-}
 
-#fire1.fade-out {
-  opacity: 0;
-  display: none;
-}
 header {
-    padding: 50px;
+    padding: 30px;
     text-align: center;
 }
 
@@ -106,4 +106,3 @@ header {
     display: inline-block;
 
 }
-
