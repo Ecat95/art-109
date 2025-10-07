@@ -1,0 +1,102 @@
+/*
+CSS RESETS:
+ Border box reset:
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ 62.5% Fix: https: //www.aleksandrhovhannisyan.com/blog/62-5-percent-font-size-trick/
+*/
+
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+
+html,
+body {
+    height: 100%;
+}
+#main1 {
+    padding: 10px;
+   color: darkolivegreen;
+    background-color: antiquewhite;
+     font-size: 1.2rem;
+    /* font-size 1.6rem is now the same as 16px */
+    line-height: 1.2;
+  font-family: crimson-text-bold;
+  font-family: "Crimson Text", serif;
+  font-weight: 700;
+  font-style: bold;
+}
+
+#option1 {
+ background-color: black;
+
+}
+/* body {
+   
+   
+} */
+
+header {
+    padding: 50px;
+    background-color: cadetblue;
+    text-align: center;
+}
+
+main {}
+
+.image-div {
+    display: inline-block;
+
+}
+.hidden  {
+
+    visibility: hidden;
+}
+
+
+#image-0 {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+#image-1 {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+#image-2 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+#image-3 {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+#image-4 {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+}
+#image-5 {
+    position: sticky;
+    top: 50px;
+    right: 50px;
+}
+#image-6 {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
