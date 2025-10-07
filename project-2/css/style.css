@@ -33,7 +33,7 @@ background-color: darkolivegreen;
 padding: 1px;
 }
 #main1 {
-    padding: 10px;
+    padding: 40px;
     color: rgb(144, 188, 68);
     background-color: antiquewhite;
     font-size: 1.2rem;
@@ -43,6 +43,7 @@ padding: 1px;
     font-family: "Crimson Text", serif;
     font-weight: 700;
     font-style: bold;
+    text-decoration: darkolivegreen;
 }
 
 #option1 {
@@ -83,9 +84,7 @@ padding: 1px;
 
 }
 
-#fire1 {
 
-}
 #fire1 {
   transition-property: opacity, display;
   transition-duration: 0.25s;
