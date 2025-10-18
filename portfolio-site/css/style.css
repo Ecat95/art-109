@@ -150,7 +150,7 @@ h3 {
 
 h1 {
     font-size: 6.5rem;
-    line-height: 0.85;
+    line-height: 1;
 }
 
 h2 {
@@ -159,7 +159,7 @@ h2 {
 }
 
 h3 {
-    font-size: 2.4;
+    font-size: 2.4rem;
     line-height: 0.8;
 }
 
@@ -283,7 +283,7 @@ footer a:hover {
     }
 }
 
-@media screen and (min-width:650) and (max-width:859px) {
+@media screen and (min-width: 650px) and (max-width: 859px) {
     .project-wrapper {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -322,7 +322,7 @@ footer a:hover {
     }
 
     .work-summary p :first-child {
-        margin-top: o;
+        margin-top: 0;
     }
 }
 
