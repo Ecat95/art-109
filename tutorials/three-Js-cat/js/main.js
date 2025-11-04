@@ -14,9 +14,11 @@ let cat
 // ~~~~~~~~~~~~~~~~Set up scene, camera, + renderer~~~~~~~~~~~~~~~~
 
 const scene = new THREE.Scene();
+scene.background = new THREE.Color(355070);
+
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-const renderer = new THREE.WebGLRenderer( {antialias: true});
+const renderer = new THREE.WebGLRenderer({ antialias: true });
 //   const renderer = new THREE.WebGLRenderer({
 //     antialias: true,
 //     canvas,
@@ -53,7 +55,7 @@ scene.add(light);
 // ~~~~~~~~~~~~~~~~ Create Geometry ~~~~~~~~~~~~~~~~
 const geometry = new THREE.BoxGeometry(1, 2, 1);
 const texture = new THREE.TextureLoader().load('textures/ice002.jpg');
-const material = new THREE.MeshBasicMaterial({ map: texture});
+const material = new THREE.MeshBasicMaterial({ map: texture });
 // const material2 = new THREE.MeshBasicMaterial({ color: 703550 });
 const cube = new THREE.Mesh(geometry, material);
 const cube2 = new THREE.Mesh(geometry, material);
@@ -75,14 +77,14 @@ cube2.position.x = -3;
 const geometry1 = new THREE.BoxGeometry(2, 2, 2);
 const texture1 = new THREE.TextureLoader().load('textures/lavatile.jpg');
 
-    const material1 = new THREE.MeshBasicMaterial({ map: texture1 });
+const material1 = new THREE.MeshBasicMaterial({ map: texture1 });
 const cube3 = new THREE.Mesh(geometry1, material1);
-scene.add(cube3);    
-    
-    cube3.position.y = 1;
+scene.add(cube3);
+
+cube3.position.y = 1;
 cube3.position.x = -1;
 cube3.position.z = -1;
-   
+
 
 
 // ~~~~~~~~~~~~~~~~Position Camera~~~~~~~~~~~~~~~~
@@ -105,7 +107,7 @@ function animate() {
     cat.rotation.y += 0.01;
     cube2.rotation.x += 0.01;
     cube2.rotation.y += 0.01;
-   
+
     //  loader1.cube3.rotation.x += 0.01;
     cube3.rotation.y += 0.01;
 
