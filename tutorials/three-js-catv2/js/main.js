@@ -13,7 +13,7 @@ import { OrbitControls } from 'https://unpkg.com/three@0.162.0/examples/jsm/cont
 
 
 // ~~~~~~~~~~~~~~~~ Declare Global Variables~~~~~~~~~~~~~~~~
-let cat, scene, camera, renderer, cube;
+let cat, scene, camera, renderer, cube, sphere;
 
 
 // ~~~~~~~~~~~~~~~~ Initialize Scene in init() ~~~~~~~~~~~~~~~~
@@ -22,31 +22,46 @@ function init() {
     // ~~~~~~Set up scene, camera, + renderer ~~~~~~
 
     scene = new THREE.Scene();
+
+        scene.background = new THREE.Color(355070);
+
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
+    // ~~ add directional light 
+    const lightRight = new THREE.DirectionalLight(0xffffff, 3);
+    lightRight.position.set(3, 4, 5);
+    scene.add(lightRight);
+
+    const helperRight = new THREE.DirectionalLightHelper(lightRight, 6);
+    // scene.add(helperRight); // comment out when done placing light
+
+
+    // ~~ add directional light 
+    const lightLeft = new THREE.DirectionalLight(0xff00000, 3);
+    lightLeft.position.set(-3, 4, 5);
+    scene.add(lightLeft);
+
+    const helperLeft = new THREE.DirectionalLightHelper(lightLeft, 5);
+    // scene.add(helperLeft); // comment out when done placing light
+
+
 
     // ~~~~~~ Initiate add-ons ~~~~~~
 
     const controls = new OrbitControls(camera, renderer.domElement);
-    // const loader = new GLTFLoader(); // to load 3d models
-    // loader.load('assets/excat.gltf', function (gltf) {
-    //     //   scene.add( gltf.scene );
-    //     cat = gltf.scene;
-    //     scene.add(cat);
-    //     // cat.scale.set(.5, .5, .5); // scale your model
-    //     // cat.position.y = -2; // set initial position
-    //     // cat.position.x = 2;
-    // }, undefined, function (error) {
-
-    //     console.error(error);
-
-    // });
+//     const loader = new GLTFLoader(); // to load 3d models
 
 
+//  loader.load('assets/excat.gltf', function (gltf) {
+//         cat = gltf.scene;
+//         scene.add(cat);
+//         cat.scale.set(.5, .5, .5); // scale your model
+//         cat.position.y = -2; // set initial position
+//     });
 
 
     // ~~~~~~ Create Geometry ~~~~~~
@@ -66,12 +81,21 @@ cube.position.x += 2;
 cube.position.y += 2;
 cube.position.z += 2;
 
+const texture = new THREE.TextureLoader().load('textures/ice002.jpg');
+
+const geometry = new THREE.SphereGeometry( 15, 32, 16 );
+const material = new THREE.MeshBasicMaterial( { map:texture} );
+const sphere = new THREE.Mesh( geometry, material );
+scene.add( sphere );
+sphere.scale.set(.2,.2,.2);
+
+sphere.position.z += -6;
+
     // ~~~~~~Position Camera~~~~~~
     camera.position.z = 5;
 
-const light = new THREE.AmbientLight( 0x404040 ); // soft white light
-scene.add( light );
 }
+
 
 
 
@@ -87,6 +111,9 @@ function animate() {
     cube.rotation.x += 0.001;
     cube.rotation.y += 0.005;
 
+ if (sphere) {
+        sphere.rotation.x += 0.7;
+    }
 
 
     // always end animation loop with renderer
