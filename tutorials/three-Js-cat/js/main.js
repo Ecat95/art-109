@@ -16,7 +16,12 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
+//   const renderer = new THREE.WebGLRenderer({
+//     antialias: true,
+//     canvas,
+//     alpha: true,
+//   });
+renderer.setSize(window.innerWidth , window.innerHeight  );
 
 document.body.appendChild(renderer.domElement);
 
@@ -25,11 +30,24 @@ document.body.appendChild(renderer.domElement);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 // const loader = new GLTFLoader(); // to load 3d models
+const loader = new GLTFLoader();
 
+loader.load( '3d/excat.gltf', function ( gltf ) {
 
+  scene.add( gltf.scene );
 
+}, undefined, function ( error ) {
+
+  console.error( error );
+
+} );
+// light start
+const color = 0xFFFFFF;
+const intensity = 1;
+const light = new THREE.AmbientLight(color, intensity);
+scene.add(light);
 // ~~~~~~~~~~~~~~~~ Create Geometry ~~~~~~~~~~~~~~~~
-const geometry = new THREE.BoxGeometry(1, 1, 1);
+const geometry = new THREE.BoxGeometry(1, 2, 1);
 const material = new THREE.MeshBasicMaterial({ color: 355070 });
 const cube = new THREE.Mesh(geometry, material);
 // scene.add(color(e56b6f))
