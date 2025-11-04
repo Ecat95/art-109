@@ -17,6 +17,7 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
+
 document.body.appendChild(renderer.domElement);
 
 
@@ -29,8 +30,9 @@ const controls = new OrbitControls(camera, renderer.domElement);
 
 // ~~~~~~~~~~~~~~~~ Create Geometry ~~~~~~~~~~~~~~~~
 const geometry = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+const material = new THREE.MeshBasicMaterial({ color: 355070 });
 const cube = new THREE.Mesh(geometry, material);
+// scene.add(color(e56b6f))
 scene.add(cube);
 
 
