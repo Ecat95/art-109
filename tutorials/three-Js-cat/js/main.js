@@ -59,9 +59,22 @@ const cube2 = new THREE.Mesh(geometry, material);
 // scene.add(color(e56b6f))
 scene.add(cube);
 scene.add(cube2);
+
 cube.position.y = 2;
 cube2.position.y = -1;
 cube2.position.x = -3;
+
+// texture
+const loader1 = new THREE.TextureLoader();
+loader1.load('textures/lavatile.jpg', (texture) => {
+  texture.colorSpace = THREE.SRGBColorSpace;
+  const material = new THREE.MeshBasicMaterial({
+    map: texture,
+  });
+  const cube3 = new THREE.Mesh(geometry, material);
+  scene.add(cube3);
+//   cubes.push(cube);  // add to our list of cubes to rotate
+});
 
 // ~~~~~~~~~~~~~~~~Position Camera~~~~~~~~~~~~~~~~
 camera.position.z = 5;  
@@ -79,10 +92,12 @@ function animate() {
     // camera.position.z += .03;
     cube.rotation.x += 0.01;
     cube.rotation.y += 0.03;
- cat.rotation.x += 0.05;
+//  cat.rotation.x += 0.0;
     cat.rotation.y += 0.01;
  cube2.rotation.x += 0.01;
     cube2.rotation.y += 0.01;
+    //  cube3.rotation.x += 0.01;
+    // cube3.rotation.y += 0.01;
 
     // always end animation loop with renderer
     renderer.render(scene, camera);
