@@ -85,6 +85,7 @@ function init() {
     scene.add(cube);
 
 
+    
     // --> Load glTF
 
     // load dog model

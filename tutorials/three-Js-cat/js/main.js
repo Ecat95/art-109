@@ -53,11 +53,15 @@ scene.add(light);
 // ~~~~~~~~~~~~~~~~ Create Geometry ~~~~~~~~~~~~~~~~
 const geometry = new THREE.BoxGeometry(1, 2, 1);
 const material = new THREE.MeshBasicMaterial({ color: 355070 });
+// const material2 = new THREE.MeshBasicMaterial({ color: 703550 });
 const cube = new THREE.Mesh(geometry, material);
+const cube2 = new THREE.Mesh(geometry, material);
 // scene.add(color(e56b6f))
 scene.add(cube);
+scene.add(cube2);
 cube.position.y = 2;
-
+cube2.position.y = -1;
+cube2.position.x = -3;
 
 // ~~~~~~~~~~~~~~~~Position Camera~~~~~~~~~~~~~~~~
 camera.position.z = 5;  
@@ -75,8 +79,10 @@ function animate() {
     // camera.position.z += .03;
     cube.rotation.x += 0.01;
     cube.rotation.y += 0.01;
-
-
+ cat.rotation.x += 0.01;
+    cat.rotation.y += 0.01;
+ cube2.rotation.x += 0.01;
+    cube2.rotation.y += 0.01;
 
     // always end animation loop with renderer
     renderer.render(scene, camera);
