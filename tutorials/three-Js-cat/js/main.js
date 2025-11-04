@@ -47,12 +47,13 @@ loader.load('assets/excat.gltf', function (gltf) {
 });
 // light start
 const color = 0xFFFFFF;
-const intensity = 1;
+const intensity = 2;
 const light = new THREE.AmbientLight(color, intensity);
 scene.add(light);
 // ~~~~~~~~~~~~~~~~ Create Geometry ~~~~~~~~~~~~~~~~
 const geometry = new THREE.BoxGeometry(1, 2, 1);
-const material = new THREE.MeshBasicMaterial({ color: 355070 });
+const texture = new THREE.TextureLoader().load('textures/ice002.jpg');
+const material = new THREE.MeshBasicMaterial({ map: texture});
 // const material2 = new THREE.MeshBasicMaterial({ color: 703550 });
 const cube = new THREE.Mesh(geometry, material);
 const cube2 = new THREE.Mesh(geometry, material);
@@ -65,20 +66,24 @@ cube2.position.y = -1;
 cube2.position.x = -3;
 
 // texture
-const loader1 = new THREE.TextureLoader();
-loader1.load('textures/lavatile.jpg', (texture) => {
-    texture.colorSpace = THREE.SRGBColorSpace;
-    const material = new THREE.MeshBasicMaterial({
-        map: texture,
-    });
-const cube3 = new THREE.Mesh(geometry, material);
+// const loader1 = new THREE.TextureLoader();
+// loader1.load('textures/lavatile.jpg', (texture) => {
+//     texture.colorSpace = THREE.SRGBColorSpace;
+//     const material = new THREE.MeshBasicMaterial({
+//         map: texture,
+//     });
+const geometry1 = new THREE.BoxGeometry(2, 2, 2);
+const texture1 = new THREE.TextureLoader().load('textures/lavatile.jpg');
+
+    const material1 = new THREE.MeshBasicMaterial({ map: texture1 });
+const cube3 = new THREE.Mesh(geometry1, material1);
 scene.add(cube3);    
     
-    cube3.position.y = 2;
-cube3.position.x = -2;
-cube3.position.z = -3;
+    cube3.position.y = 1;
+cube3.position.x = -1;
+cube3.position.z = -1;
    
-});
+
 
 // ~~~~~~~~~~~~~~~~Position Camera~~~~~~~~~~~~~~~~
 camera.position.z = 5;
@@ -102,7 +107,7 @@ function animate() {
     cube2.rotation.y += 0.01;
    
     //  loader1.cube3.rotation.x += 0.01;
-    // cube3.rotation.y += 0.01;
+    cube3.rotation.y += 0.01;
 
     // always end animation loop with renderer
     renderer.render(scene, camera);
