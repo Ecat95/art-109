@@ -10,18 +10,14 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-let cat
-// ~~~~~~~~~~~~~~~~Set up scene, camera, + renderer~~~~~~~~~~~~~~~~
+let cat, scene, camera, renderer, cube;
 
-const scene = new THREE.Scene();
+function init () {
+    const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-const renderer = new THREE.WebGLRenderer();
-//   const renderer = new THREE.WebGLRenderer({
-//     antialias: true,
-//     canvas,
-//     alpha: true,
-//   });
+const renderer = new THREE.WebGLRenderer( );
+
 renderer.setSize(window.innerWidth, window.innerHeight);
 
 document.body.appendChild(renderer.domElement);
@@ -45,44 +41,51 @@ loader.load('assets/excat.gltf', function (gltf) {
     console.error(error);
 
 });
+
 // light start
-const color = 0xFFFFFF;
-const intensity = 1;
-const light = new THREE.AmbientLight(color, intensity);
-scene.add(light);
+
+// const color = 0xFFFFFF;
+// const intensity = 1;
+// const light = new THREE.AmbientLight(color, intensity);
+// scene.add(light);
+
 // ~~~~~~~~~~~~~~~~ Create Geometry ~~~~~~~~~~~~~~~~
 const geometry = new THREE.BoxGeometry(1, 2, 1);
 const material = new THREE.MeshBasicMaterial({ color: 355070 });
 // const material2 = new THREE.MeshBasicMaterial({ color: 703550 });
 const cube = new THREE.Mesh(geometry, material);
-const cube2 = new THREE.Mesh(geometry, material);
+// const cube2 = new THREE.Mesh(geometry, material);
 // scene.add(color(e56b6f))
 scene.add(cube);
-scene.add(cube2);
+// scene.add(cube2);
 
 cube.position.y = 2;
-cube2.position.y = -1;
-cube2.position.x = -3;
+// cube2.position.y = -1;
+// cube2.position.x = -3;
 
 // texture
-const loader1 = new THREE.TextureLoader();
-loader1.load('textures/lavatile.jpg', (texture) => {
-    texture.colorSpace = THREE.SRGBColorSpace;
-    const material = new THREE.MeshBasicMaterial({
-        map: texture,
-    });
-const cube3 = new THREE.Mesh(geometry, material);
-scene.add(cube3);    
+// const loader1 = new THREE.TextureLoader();
+// loader1.load('textures/lavatile.jpg', (texture) => {
+//     texture.colorSpace = THREE.SRGBColorSpace;
+//     const material = new THREE.MeshBasicMaterial({
+//         map: texture,
+//     });
+// const cube3 = new THREE.Mesh(geometry, material);
+// scene.add(cube3);    
     
-    cube3.position.y = 2;
-cube3.position.x = -2;
-cube3.position.z = -3;
+//     cube3.position.y = 2;
+// cube3.position.x = -2;
+// cube3.position.z = -3;
    
-});
+// });
 
 // ~~~~~~~~~~~~~~~~Position Camera~~~~~~~~~~~~~~~~
 camera.position.z = 5;
 
+
+// ~~~~~~~~~~~~~~~~Set up scene, camera, + renderer~~~~~~~~~~~~~~~~
+
+}
 
 
 // ~~~~~~~~~~~~~~~~ Animation Loop ~~~~~~~~~~~~~~~~
@@ -96,16 +99,20 @@ function animate() {
     // camera.position.z += .03;
     cube.rotation.x += 0.01;
     cube.rotation.y += 0.03;
-    //  cat.rotation.x += 0.0;
-    cat.rotation.y += 0.01;
-    cube2.rotation.x += 0.01;
-    cube2.rotation.y += 0.01;
+
+    // cat.rotation.y += 0.01;
+    // cube2.rotation.x += 0.01;
+    // cube2.rotation.y += 0.01;
    
-    //  loader1.cube3.rotation.x += 0.01;
-    // cube3.rotation.y += 0.01;
 
     // always end animation loop with renderer
     renderer.render(scene, camera);
 }
-
+// function onWindowResize() {
+//     camera.aspect = window.innerWidth / window.innerHeight;
+//     camera.updateProjectionMatrix();
+//     renderer.setSize(window.innerWidth, window.innerHeight);
+// }
+// window.addEventListener('resize',onWindowResize,false)
+init();
 animate(); // execute animation function
