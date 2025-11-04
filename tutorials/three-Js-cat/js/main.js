@@ -22,7 +22,7 @@ const renderer = new THREE.WebGLRenderer();
 //     canvas,
 //     alpha: true,
 //   });
-renderer.setSize(window.innerWidth , window.innerHeight  );
+renderer.setSize(window.innerWidth, window.innerHeight);
 
 document.body.appendChild(renderer.domElement);
 
@@ -33,18 +33,18 @@ const controls = new OrbitControls(camera, renderer.domElement);
 // const loader = new GLTFLoader(); // to load 3d models
 const loader = new GLTFLoader();
 
-loader.load( 'assets/excat.gltf', function ( gltf ) {
-//   scene.add( gltf.scene );
- cat = gltf.scene;
-        scene.add(cat);
-        cat.scale.set(.5, .5, .5); // scale your model
-        cat.position.y = -2; // set initial position
-        cat.position.x = 2;
-}, undefined, function ( error ) {
+loader.load('assets/excat.gltf', function (gltf) {
+    //   scene.add( gltf.scene );
+    cat = gltf.scene;
+    scene.add(cat);
+    cat.scale.set(.5, .5, .5); // scale your model
+    cat.position.y = -2; // set initial position
+    cat.position.x = 2;
+}, undefined, function (error) {
 
-  console.error( error );
+    console.error(error);
 
-} );
+});
 // light start
 const color = 0xFFFFFF;
 const intensity = 1;
@@ -67,17 +67,21 @@ cube2.position.x = -3;
 // texture
 const loader1 = new THREE.TextureLoader();
 loader1.load('textures/lavatile.jpg', (texture) => {
-  texture.colorSpace = THREE.SRGBColorSpace;
-  const material = new THREE.MeshBasicMaterial({
-    map: texture,
-  });
-  const cube3 = new THREE.Mesh(geometry, material);
-  scene.add(cube3);
-//   cubes.push(cube);  // add to our list of cubes to rotate
+    texture.colorSpace = THREE.SRGBColorSpace;
+    const material = new THREE.MeshBasicMaterial({
+        map: texture,
+    });
+const cube3 = new THREE.Mesh(geometry, material);
+scene.add(cube3);    
+    
+    cube3.position.y = 2;
+cube3.position.x = -2;
+cube3.position.z = -3;
+   
 });
 
 // ~~~~~~~~~~~~~~~~Position Camera~~~~~~~~~~~~~~~~
-camera.position.z = 5;  
+camera.position.z = 5;
 
 
 
@@ -92,11 +96,12 @@ function animate() {
     // camera.position.z += .03;
     cube.rotation.x += 0.01;
     cube.rotation.y += 0.03;
-//  cat.rotation.x += 0.0;
+    //  cat.rotation.x += 0.0;
     cat.rotation.y += 0.01;
- cube2.rotation.x += 0.01;
+    cube2.rotation.x += 0.01;
     cube2.rotation.y += 0.01;
-    //  cube3.rotation.x += 0.01;
+   
+    //  loader1.cube3.rotation.x += 0.01;
     // cube3.rotation.y += 0.01;
 
     // always end animation loop with renderer

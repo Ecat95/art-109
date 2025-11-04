@@ -1,9 +1,19 @@
+body {
+    margin: 0;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
 h1 {
-    margin: 5px;
+    margin: 1px;
     text-align: center;
     background-color: #eaac8b;
     color: #6d597a;
 }
+
 script {
     background-color: #eaac8b;
 }
