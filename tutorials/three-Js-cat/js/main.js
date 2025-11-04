@@ -10,6 +10,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
+let cat
 // ~~~~~~~~~~~~~~~~Set up scene, camera, + renderer~~~~~~~~~~~~~~~~
 
 const scene = new THREE.Scene();
@@ -33,9 +34,12 @@ const controls = new OrbitControls(camera, renderer.domElement);
 const loader = new GLTFLoader();
 
 loader.load( 'assets/excat.gltf', function ( gltf ) {
-
-  scene.add( gltf.scene );
-
+//   scene.add( gltf.scene );
+ cat = gltf.scene;
+        scene.add(cat);
+        cat.scale.set(.5, .5, .5); // scale your model
+        cat.position.y = -2; // set initial position
+        cat.position.x = 2;
 }, undefined, function ( error ) {
 
   console.error( error );
@@ -52,7 +56,7 @@ const material = new THREE.MeshBasicMaterial({ color: 355070 });
 const cube = new THREE.Mesh(geometry, material);
 // scene.add(color(e56b6f))
 scene.add(cube);
-
+cube.position.y = 2;
 
 
 // ~~~~~~~~~~~~~~~~Position Camera~~~~~~~~~~~~~~~~
