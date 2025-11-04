@@ -32,7 +32,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 // const loader = new GLTFLoader(); // to load 3d models
 const loader = new GLTFLoader();
 
-loader.load( '3d/excat.gltf', function ( gltf ) {
+loader.load( 'assets/excat.gltf', function ( gltf ) {
 
   scene.add( gltf.scene );
 
