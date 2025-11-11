@@ -7,7 +7,6 @@ var server = app.listen(1000);
 
 app.use(express.static('public'));
 
-
 console.log("hello world");
 
 var socket = require('socket.io');
