@@ -1,0 +1,75 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /*seting default to 10px*/
+}
+
+*,
+*:before,
+*:after {
+    /* box-sizing: inherit; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    background-color: darkolivegreen;
+    /* background: #222; */
+    color: #fcfdfd;
+    /* display: flex; */
+    justify-content: space-between;
+    /* padding: 0 20px; */
+    /* margin: auto; */
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+body {
+    margin: 10px;
+    background-color: rgba(176, 219, 173, 0.873);
+}
+
+a {
+
+    color: #3c8453;
+    text-decoration: none;
+    background: #3c8453;
+    color: #f6f6f6;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    /* display: inline-block; */
+    padding: 6px;
+    letter-spacing: .1em;
+    line-height: 1;
+    border-radius: 6px;
+ 
+}
+#button{
+   margin-top: 25px;
+    text-align: center;
+}
+a:hover {
+    color: #0e1511;
+    text-decoration: none;
+    background: #848b86;
+    color: #f6f6f6;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    /* display: inline-block; */
+    padding: 7px;
+    letter-spacing: .5em;
+    line-height: 1.5;
+    border-radius: 6px;
+    /* font-family: "Bitcount Prop Single Ink", system-ui; */
+}
+p{
+    font-size: 1.5em;
+}
+summary{
+    font-size: 2em;
+}
