@@ -69,6 +69,8 @@ a:hover {
 }
 p{
     font-size: 1.5em;
+    padding: 10px;
+    margin: 10px;
 }
 summary{
     font-size: 2em;
